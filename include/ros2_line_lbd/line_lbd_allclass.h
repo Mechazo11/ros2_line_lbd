@@ -2,11 +2,15 @@
  * line_detection interface
  * Copyright Shichao Yang,2016, Carnegie Mellon University
  * Email: shichaoy@andrew.cmu.edu
- *
+ * Modified by Azmyin Md. Kamal
+ * 01/17/2024
  */
 
-# pragma once
-#include <line_lbd/line_descriptor.hpp>
+// # pragma once
+#ifndef LINE_LBD_ALLCLASS_H
+#define LINE_LBD_ALLCLASS_H
+
+#include "ros2_line_lbd/line_descriptor.hpp"
 
 // #include "opencv2/core/utility.hpp"
 #include <opencv2/imgproc.hpp>
@@ -77,3 +81,6 @@ void mat_to_keylines(const cv::Mat& linesmat_src, std::vector< KeyLine>& keyline
 			  int raw_img_width, int raw_img_height, float raw_length_threshold=0, float close_boundary_threshold=0, float scaling=1,
 			  int octave_id=0,float each_octave_scale=1
 		    );
+
+
+#endif
