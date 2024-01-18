@@ -40,7 +40,7 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
   OpenCV
 )
 
-# line_lbd_lib as a shared library
+## line_lbd_lib as a shared library
 add_library(line_lbd_lib SHARED
   libs/binary_descriptor.cpp 
   libs/binary_descriptor_matcher.cpp 
@@ -53,6 +53,7 @@ add_library(line_lbd_lib SHARED
   libs/types.hpp  
   class/line_lbd_allclass.cpp
 )
+
 
 # set_target_properties(line_lbd_lib PROPERTIES VERSION "${line_lbd_lib_VERSION}")
 
@@ -68,9 +69,6 @@ ament_target_dependencies(line_lbd_lib
 #   ${EIGEN3_LIBS}
 #   -lboost_system
 # )
-
-ament_export_libraries(line_lbd_lib)
-ament_export_include_directories(include) # Tell downstream packages where to find the headers
 
 # To activate its internal node
 # # Declare C++ executibles
@@ -97,14 +95,12 @@ install (DIRECTORY include/
 #   INCLUDES DESTINATION include/${PROJECT_NAME}
 # )
 
-
 install(
   TARGETS line_lbd_lib
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
   RUNTIME DESTINATION bin
 )
-
 
 # Tell downstream packages where to find the headers
 # ament_export_include_directories(include)
@@ -114,5 +110,8 @@ install(
 #   line_lbd_lib
 #   ${THIS_PACKAGE_INCLUDE_DEPENDS}
 # )
+
+ament_export_libraries(line_lbd_lib)
+ament_export_include_directories(include) # Tell downstream packages where to find the headers
 
 ament_package()
