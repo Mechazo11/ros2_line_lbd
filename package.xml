@@ -3,7 +3,7 @@
 <package format="3">
   <name>ros2_line_lbd</name>
   <version>1.0.0</version>
-  <description>ROS2 port of Dr. Yong`s line_lbd package</description>
+  <description>ROS2 port of Dr. Yang`s line_lbd package</description>
   <maintainer email="azmyin12@gmail.com">Azmyin</maintainer>
   <license>MIT</license>
 
